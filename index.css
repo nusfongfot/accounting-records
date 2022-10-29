@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit&family=Playfair+Display:ital@1&family=Smooch&display=swap');
+
+:root{
+  --box-shadow:rgba(0,0,0,0.12);
+}
+
+*{
+  box-sizing: border-box;
+  font-family: 'Kanit', sans-serif;
+
+}
+
+body{
+  display:flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content:center;
+  min-height: 100vh;
+  font-family: 'Kanit', sans-serif;
+  background-color:rgb(177, 220, 228);
+  margin: 0;
+}
+
+.container{
+  margin: 30px auto;
+  width: 350px;
+}
+
+h1{
+  letter-spacing: 1;
+  margin:0;
+}
+
+h3{
+  border-bottom: 1px solid #bbb;
+  padding-bottom: 10px;
+  margin:40px 0 10px;  
+}
+
+h4{
+  margin: 0;
+}
+
+.income-container{
+  display:flex;
+  justify-content:space-between;
+  background-color:#fff;
+  box-shadow:   var(--box-shadow);
+  padding:10px 10px;
+}
+
+.income-container > div{
+  flex: 1;
+  text-align: center;
+}
+
+/* เข้าถึง div ตัวแรก */
+.income-container > div:first-of-type{
+  border-right: 1px solid #dedede;
+}
+
+.money{
+  font-size: 20px;
+  letter-spacing: 1px;
+  margin:5px 0;
+}
+.money.plus{
+  color:#2ecc71;
+}
+
+.money.minus{
+  color:red;
+}
+
+label{
+  display: inline-block;
+  margin:10px 0;
+}
+
+input[type="text"],input[type="number"]{
+  display: block;
+  border: 1px solid #dedede;
+  border-radius: 3px;
+  padding:10px;
+  font-size: 16px;
+  width: 100%;
+}
+
+.btn{
+  display: block;
+  width: 100%;
+  font-family: 'Kanit', sans-serif;
+  background-color:#2ecc71;
+  color:#fff;
+  border: none;
+  margin:20px auto;
+  padding:10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.list{  
+  list-style: none;
+  padding:0;
+  margin-bottom: 40px;
+}
+
+.list li{
+  background-color: #fff;
+  color: #333;
+  display:flex;
+  justify-content:space-between;
+  padding:10px;
+  margin:10px 0;
+}
+
+.list li.plus{
+  border-right: 5px solid #2ecc71;
+  color:#2ecc71;
+}
+
+.list li.minus{
+  border-right: 5px solid red;
+  color:red;
+}
+
+.delete-btn{
+  cursor: pointer;
+  border:none;
+  background-color: red;
+  color:#fff;
+  font-size: 20px;
+  line-height:20px;
+  padding:2px 5px;
+  position:absolute;
+  transform: translate(-190%,-5%);
+  /* ซ่อนปุ่ม */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* เอาเมาส์ไปชี้แล้วแสดงปุ่มลบชึ้นมา */
+.list li:hover .delete-btn{
+  opacity: 1;
+}
+
+.btn:focus,.delete-btn:focus{
+  outline: 0;
+}
